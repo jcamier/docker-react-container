@@ -1,14 +1,27 @@
-FROM node:10.15.0-alpine
+FROM ubuntu:16.04
 
 MAINTAINER Jack Camier
 
-# Change the name below to whatever you want to call your react app
+# Set name of react app
 ARG REACT_APP_NAME="react-app"
 
-# Update Alpine to use ssh and vim
-RUN apk update && apk add openssh vim
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
+ENV LC_COLLATE=C
+ENV LC_CTYPE=en_US.UTF-8
 
-# set working directory
+# Update Ubuntu to use ssh, vim, etc
+# Install Node.js 8 and npm 5
+RUN apt-get update
+RUN apt-get -qq update
+RUN apt-get install -y build-essential
+RUN apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
+RUN apt-get install -y nodejs
+
+RUN apt-get -y install wget git vim sudo ssh apt-utils
+
+# Set working directory
 RUN mkdir -p /usr/src/app
 RUN cd /usr/src/app/
 WORKDIR /usr/src/app
@@ -22,8 +35,3 @@ WORKDIR /usr/src/app/$REACT_APP_NAME
 
 EXPOSE 3000
 CMD ["npm", "start"]
-
-
-
-
-

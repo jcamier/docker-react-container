@@ -1,14 +1,16 @@
-# Docker instructions:
-git clone https://github.com/jcamier/docker-react-container.git 
+#Docker instructions:
 
-docker build --tag react-app .
+* git clone https://github.com/jcamier/docker-react-container.git 
 
-docker run -i -t -p 3000:3000 react-app
+* docker build -t react-base:latest .
 
-open your browser and go to http://localhost:3000/
+* docker run -i -t -p 3000:3000 react-base:latest
+
+* open your browser and go to http://localhost:3000/
+
+<hr>
 
 Now it is up to you to create your React app. 
 
-docker run -i -t react-app /bin/sh
+* docker run -i -t react-base /bin/sh
 
-Your .js files are in the src folder (cd src)
