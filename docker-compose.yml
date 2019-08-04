@@ -1,0 +1,11 @@
+# Docker version 3.6 is for Docker Engine 18.02.0+, change the version to match
+version: "3.6"
+services:
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: react-base:latest
+    container_name: react_base_container
+    ports:
+      - "3000:3000"
