@@ -1,4 +1,4 @@
-#Docker instructions:
+# Docker instructions:
 
 * git clone https://github.com/jcamier/docker-react-container.git 
 
