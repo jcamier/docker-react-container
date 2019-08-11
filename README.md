@@ -8,7 +8,12 @@ Use docker compose to build all containers
 
 * docker-compose up --build
 
-    - If you get a port already allocated stop your container and then run the docker-compose command
+    - If you get a port already allocated, stop your container and then run the docker-compose command
+    - Steps:
+        - docker ps
+        - docker stop <container_id>
+        - rerun your docker-compose command above
+           
     
 <hr>
 

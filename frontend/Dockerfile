@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER Jack Camier
 
-# Set name of react app
+# Set name of react app, you can change this name to whatever you chose.
 ARG REACT_APP_NAME="react-app"
 
 ENV LANG=en_US.UTF-8
@@ -11,7 +11,7 @@ ENV LC_COLLATE=C
 ENV LC_CTYPE=en_US.UTF-8
 
 # Update Ubuntu to use ssh, vim, etc
-# Install Node.js 8 and npm 5
+# Install Node.js 8 and npm
 RUN apt-get update
 RUN apt-get -qq update
 RUN apt-get install -y build-essential
